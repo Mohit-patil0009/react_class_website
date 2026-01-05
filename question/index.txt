@@ -1,0 +1,16 @@
+01. what is react ?
+02. what is single page application ?
+03. why we should use react ?
+04. what is props ?
+05. could we change the value of props ?
+06. props are mutable or inmutable ?
+07. what is component ?
+08. what is the benifit of component ?
+09. type of component ?
+10. what is state ?
+11. why we use state insted of variable ?
+12. what is map and key ?
+13. what is useEffct ?
+14. type of useEffct ?
+15. if i want to call useEffct only first time, so what should I pass in dependency ? 
+15. if i want to call useEffct every time, so what should I pass in dependency ? 

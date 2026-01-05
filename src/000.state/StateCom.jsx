@@ -1,28 +1,48 @@
 import { useState } from "react";
 
 function StateCom() {
-  let [count, setCount] = useState(80);
-  console.log("🚀 ~ StateCom ~ count:", count);
+  let [Mohit , setMohit] = useState(0);
+  // console.log("🚀 ~ StateCom ~ count:", count);
+function increment(){
+  // console.log("Increment button clicked");
+  setMohit(Mohit + 1);
+}
 
-  function handleIncrement() {
-    console.log("Increment button clicked");
-    setCount(count + 1);
-  }
-  function decrement() {
-    console.log("Increment button clicked");
-    setCount(count + 1);
-  }
+function decrement(){
+  // console.log("🚀 ~ decrement ~ decrement:", decrement)
+  setMohit(Mohit - 1);
+}
+
+function multiplication(){
+  // console.log("🚀 ~ multiplication ~ multiplication:", multiplication)
+  setMohit(Mohit * 2);
+}
+
+function Division(){
+  // console.log("🚀 ~ Division ~ Division:", Division)
+  setMohit(Mohit / 2);
+}
+  
 
   return (
-    <div className="flex justify-center items-center flex-col bg-red-500 h-screen mb-5">
-      <h1>Count is {count}</h1>
+    <div className="flex justify-center items-center flex-col bg-amber-100 h-screen mb-5">
+      <h1>Count is {Mohit}</h1>
+      <button onClick={()=>increment()} className="border ">
+        Increment
+      </button>
+      <br />
+      <button onClick={()=>decrement()} className="border">
+        Decrement 
+      </button>
+      <br />
+      <button onClick={()=>multiplication()} className="border">
+        multiplication
+      </button>
+      <br />
+      <button onClick={()=>Division()} className="border">
+        Division
+      </button>
 
-      <button onClick={() => handleIncrement()} className="border p-3">
-        Increment{" "}
-      </button>
-      <button onClick={() => decrement()} className="border p-3">
-        Increment{" "}
-      </button>
     </div>
   );
 }
