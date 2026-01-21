@@ -4,7 +4,7 @@ import React, { useState } from "react";
 export const Car = () => {
   const [Cartodo, setCarTodo] = useState("");
   const [CarTodoArray,setCarTodoArray] = useState([]);
-  console.log(CarTodoArray)
+  // console.log(CarTodoArray)
 
   const CarvalueHandler = (e) => {
     setCarTodo(e.target.value);
@@ -16,7 +16,7 @@ export const Car = () => {
   }
 
   const deleteHandler = (index) => {
-    console.log("deleted button clicked",index)
+    // console.log("deleted button clicked",index)
     window.alert("Can you delete this task")
     
     const filterdata = CarTodoArray.filter((e,i)=>{

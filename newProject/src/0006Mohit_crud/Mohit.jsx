@@ -43,6 +43,18 @@ export const Mohit = () => {
                     <div className="min-w-full flex justify-between items-center gap-3 p-1 cursor-pointer">
                     <li>{e}</li>
                     <OctagonX  onClick={()=>DeleteButton(i)} color="red"     strokeWidth={1.5} />
+
+                        <div className="flex gap-2">
+                <Edit
+                  className="cursor-pointer"
+                  onClick={() => editHandler(e, i)}
+                />
+                <Trash
+                  className="cursor-pointer"
+                  color="red"
+                  onClick={() => Check(i)}
+                />
+              </div>
                     </div>
                 )
             })}

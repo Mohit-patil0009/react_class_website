@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 export const Fruit = () => {
     const [FruitsTodo,setFruitsTodo]=useState("");
     const [FruitsTodoArray,setFruitsTodoArray]=useState([]);
+    const [index, setIndex] = useState(null);
+    const [updateMode, setUpdateMode] = useState(false);
     // console.log(FruitsTodoArray)
 
     const InputHandler = (e) =>{
@@ -28,6 +30,28 @@ export const Fruit = () => {
         })
         setFruitsTodoArray(Filterdata)
     }
+    const editHandler = (element, index) => {
+        setFruitsTodo(element);
+        setIndex(index);
+        setUpdateMode(true);
+  };
+   const updateHandler = () => {
+    // array => todoList
+    // newVal => text
+    // index => index
+    let updatedArray = todoList.map((e, i) => {
+      if (i === index) {
+        return text;
+      } else {
+        return e;
+      }
+    });
+    // console.log("🚀 ~ updateHandler ~ updatedArray:", updatedArray);
+    setTodoList(updatedArray);
+    // localStorage.setItem("todoData", JSON.stringify(updatedArray));
+    setFruitsTodo("");
+    setUpdateMode(false);
+  };
 
   return (
     <div className='bg-gray-200 min-h-screen flex-col gap-2 flex justify-center items-center '>
@@ -42,8 +66,13 @@ export const Fruit = () => {
                 return (
                     <div className="min-w-full flex justify-between items-center gap-3 p-1 cursor-pointer">
                     <li>{e}</li>
-                    <OctagonX  onClick={()=>DeleteButton(i)} color="red"     strokeWidth={1.5} />
-                    </div>
+                    <OctagonX  onClick={()=>DeleteButton(i)} color="red" strokeWidth={1.5} />
+
+                        <div className="flex gap-2">
+                <Edit className="cursor-pointer" onClick={() => editHandler(e, i)}/>
+                <Trash className="cursor-pointer" color="red" onClick={() => DeleteButton(i)} />
+              </div>
+                </div>
                 )
             })}
         </div>
